@@ -21,7 +21,7 @@ class BooksResource extends JsonResource
             'author' => AuthorResource::make($this->authors),
             'category' => CategoriesResource::make($this->categories),
             'description' => $this->description,
-            'image' => 'images/' . $this->image,
+            'image' => url('images/' . $this->image),
             'status' => $this->status,
             'release_date' => $this->release_date,
             'location' => $this->location
