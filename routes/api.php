@@ -25,22 +25,22 @@ Route::middleware(['auth:sanctum'])->group(function () {
     /**
      * @ Students
      */
-    Route::post('/students/{id}', [StudentsController::class, 'getStudentInfo']);
+    Route::get('/students/{id}', [StudentsController::class, 'getStudentInfo']);
     Route::post('/students/update/{id}', [StudentsController::class, 'update']);
     Route::post('/students/delete/{id}', [StudentsController::class, 'delete']);
     /**
      * @ Book 
      */
-    Route::post('/books', [BooksController::class, 'getAllBooks']);
-    Route::post('/books/detail/{id}', [BooksController::class, 'viewBookDetail']);
+    Route::get('/books', [BooksController::class, 'getAllBooks']);
+    Route::get('/books/detail/{id}', [BooksController::class, 'viewBookDetail']);
     Route::post('/books/search', [BooksController::class, 'searchBook']);
     /**
      * @ Author
      */
     Route::post('/authors', [AuthorController::class, 'index']);
-    Route::post('/author/{id}', [AuthorController::class, 'show']);
+    Route::get('/author/{id}', [AuthorController::class, 'show']);
     /**
      * @ Category
      */
-    Route::post('/categories', [CategoriesController::class, 'index']);
+    Route::get('/categories', [CategoriesController::class, 'index']);
 });
