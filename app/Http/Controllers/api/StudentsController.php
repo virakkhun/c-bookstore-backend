@@ -80,7 +80,7 @@ class StudentsController extends Controller
 					"department" => $data['department'],
 					"telephone" => $data['telephone'],
 					"status" => $data['status'],
-					"image" => url('images/'. $data['image']),
+					"image" => $data['image'] ? url('images/'. $data['image']) : '',
 					"created_at" => $data['created_at']
 				],
 				'status' => 1
