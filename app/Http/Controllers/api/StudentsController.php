@@ -73,7 +73,16 @@ class StudentsController extends Controller
 		$data = Students::where('id', $id)->first();
 		if ($data) {
 			$res = [
-				'data' => $data,
+				'data' => [   
+					"id" => $data['id'],
+					"username" => $data['username'],
+					"email" => $data['email'],
+					"department" => $data['department'],
+					"telephone" => $data['telephone'],
+					"status" => $data['status'],
+					"image" => url('images/'. $data['image']),
+					"created_at" => $data['created_at']
+				],
 				'status' => 1
 			];
 
